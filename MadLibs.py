@@ -1,8 +1,11 @@
 #!/usr/bin/python
+<<<<<<< HEAD
 
 import cgi, cgitb
 cgitb.enable()
 
+=======
+>>>>>>> ba53e43e3c835520e76163908c81fff742ad0491
 print "Content-Type: text/html\r\n"
 
 import random
@@ -12,7 +15,11 @@ def madlibs(storyString, nounList, verbList, adjectiveList):
     x=0
     while x<len(storyString):
         if storyString[x:x+4]=="NOUN":
+<<<<<<< HEAD
             new+=nounList[random.randint(0,len(nounList)-1)]
+=======
+            new+="<b>" + nounList[random.randint(0,len(nounList)-1)] + "</b>"
+>>>>>>> ba53e43e3c835520e76163908c81fff742ad0491
             x+=4
         else:
             new+=storyString[x]
@@ -21,7 +28,11 @@ def madlibs(storyString, nounList, verbList, adjectiveList):
     new1=""
     while x<len(new):
         if new[x:x+4]=="VERB":
+<<<<<<< HEAD
             new1+=verbList[random.randint(0,len(verbList)-1)]
+=======
+            new1+="<b>" + verbList[random.randint(0,len(verbList)-1)] + "</b>"
+>>>>>>> ba53e43e3c835520e76163908c81fff742ad0491
             x+=4
         else:
             new1+=new[x]
@@ -30,12 +41,20 @@ def madlibs(storyString, nounList, verbList, adjectiveList):
     new2=""
     while x<len(new1):
         if new1[x:x+9]=="ADJECTIVE":
+<<<<<<< HEAD
             new2+=adjectiveList[random.randint(0,len(adjectiveList)-1)]
+=======
+            new2+="<b>" + adjectiveList[random.randint(0,len(adjectiveList)-1)] + "</b>"
+>>>>>>> ba53e43e3c835520e76163908c81fff742ad0491
             x+=9
         else:
             new2+=new1[x]
             x+=1
+<<<<<<< HEAD
     return "<html>\n<head><title>MadLibs</title><head>\n<body>\n" + new2 + "\n</body>"
+=======
+    return "<html>\n<head><title>MadLibs</title><head>\n<body>\n <h1> Lincoln's Stuyvesant Address </h1>\n" + new2 + "\n</body>"
+>>>>>>> ba53e43e3c835520e76163908c81fff742ad0491
     
             
  

@@ -1,10 +1,19 @@
 #!/usr/bin/python
 print "Content-type: text/html\n"
 
+<<<<<<< HEAD
 print "<html> <body>"
 def readFileIntoLists(filename):
         lines = open(filename).read().split("\n")
         return [line.split(",") for line in lines ]
+=======
+print "<!DOCTYPE html> <html> <body>"
+def readFileIntoLists(filename):
+        lines = (open(filename).read()).split("\n")
+        for i in range(len(lines)):
+                       lines[i]=lines[i].split(',')
+        return lines
+>>>>>>> ba53e43e3c835520e76163908c81fff742ad0491
 
 
 def getHeader(L):
@@ -16,6 +25,7 @@ def getData(L):
         return L[1:]
 
 
+<<<<<<< HEAD
 data1 = readFileIntoLists("pokemon.csv")
 
 _pokeGeneralH =  getHeader(data1)
@@ -50,10 +60,24 @@ def getStatID(s):
         if not s.lower() in statNames:
                 return -1
         return statNames.index(s.lower())
+=======
+pokeGeneralH =  getHeader(readFileIntoLists("pokemon.csv"))
+pokeGeneral = getData(readFileIntoLists("pokemon.csv"))
+print "hello"
+pokeStatsH = getHeader(readFileIntoLists("pokemon_stats.csv"))
+
+pokeStats = getData(readFileIntoLists("pokemon_stats.csv"))
+
+
+statsH = getHeader(readFileIntoLists("stats.csv"))
+stats = getData(readFileIntoLists("stats.csv"))
+
+>>>>>>> ba53e43e3c835520e76163908c81fff742ad0491
 
 def getOtherAttributes(pokemon_ID):
     AttributesList=[]
     for i in range(3):
+<<<<<<< HEAD
         pokeAttributes=_pokeStats[pokemon_ID*6+i]
         AttributesList.append(pokeAttributes[2])
     AttributesList.append(_pokeStats[pokemon_ID*6+5][2])
@@ -63,6 +87,17 @@ def makeSinglePokeList(pokemon_ID):
     Pokelist=[pokemon_ID+1,_pokeGeneral[pokemon_ID][1]]
     for i in range(3,5):
         Pokelist.append(_pokeGeneral[pokemon_ID][i])
+=======
+        pokeAttributes=pokeStats[pokemon_ID*6+i]
+        AttributesList.append(pokeAttributes[2])
+    AttributesList.append(pokeStats[pokemon_ID*6+5][2])
+    return AttributesList
+
+def makeSinglePokeList(pokemon_ID):
+    Pokelist=[pokemon_ID+1,pokeGeneral[pokemon_ID][1]]
+    for i in range(3,5):
+        Pokelist.append(pokeGeneral[pokemon_ID][i])
+>>>>>>> ba53e43e3c835520e76163908c81fff742ad0491
     return Pokelist + getOtherAttributes(pokemon_ID)
    
 def makePokeTable():

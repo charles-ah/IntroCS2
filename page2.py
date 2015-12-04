@@ -1,30 +1,3 @@
-<<<<<<< HEAD
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-      <title>Personal Calendar</title>
-
-      <!-- CSS  -->
-      <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-      <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    </head>
-    <body>
-        <h3><center>Personal Calendar</center></h3>
-    <hr><hr>
-You need to login to see more. You can log in here: <a href="login.html">here</a>
-<hr><hr>
-  <br>
-        </center>
-        <!--  Scripts-->
-      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="js/materialize.js"></script>
-      <script src="js/init.js"></script>
-
-      </body>
-    </html>
-=======
 #!/usr/bin/python
 import random
 import cgi,cgitb,os
@@ -44,7 +17,7 @@ def header():
     <title>page of my website...</title>
     </head>
     <body>
-        <h1> This is the FIRST page! </h1>
+        <h1> This is the SECOND page! </h1>
     """
 
 
@@ -88,8 +61,8 @@ def makeLink(page, text):
 
 def loggedIn():
     return '''
-This part is super secret!<br>
-My secret? I hate fleas... even at flea markets.<br>
+\tThis part is super secret!<br>
+\tMy secret? I hate peas.<br>
 '''
 
 def notLoggedIn():
@@ -125,4 +98,3 @@ def main():
     print header() + body + footer()
 
 main()
->>>>>>> ba53e43e3c835520e76163908c81fff742ad0491

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+#! /usr/bin/python
+print "Content-Type: text/html \n"
+>>>>>>> ba53e43e3c835520e76163908c81fff742ad0491
 def makeBar(n):
     x=0
     bar=""
@@ -24,6 +29,7 @@ def barGraphVertical(L):
         graph=graph+str(x)
         x=x+1
     graph=graph+"\n"
+<<<<<<< HEAD
     x=0
     y=0
     counter=0
@@ -34,4 +40,25 @@ def barGraphVertical(L):
                 x=x+1
             else:
                 x=x+1
+=======
+    rowCount=0
+    colCount=0
+    
+    while rowCount<max(L):
+        while colCount<len(L):
+            if rowCount<L[colCount]:
+                graph=graph+"="
+                colCount=colCount+1
+            else:
+                graph=graph+" "
+                colCount=colCount+1
+        graph=graph+"\n"
+        rowCount=rowCount+1
+        colCount=0
+    return graph
+
+#print makeGraph([3,0,1,2])
+
+print barGraphVertical([3,4,1,5])
+>>>>>>> ba53e43e3c835520e76163908c81fff742ad0491
             
